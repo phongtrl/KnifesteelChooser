@@ -352,6 +352,28 @@ function render() {
   renderDetails();
 }
 
+const themeToggle = document.getElementById("themeToggle");
+const themeIcon = themeToggle.querySelector(".theme-toggle-icon");
+const themeLabel = themeToggle.querySelector(".theme-toggle-label");
+
+function applyTheme(theme) {
+  const isDark = theme === "dark";
+  document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
+  themeToggle.setAttribute("aria-pressed", String(isDark));
+  themeIcon.textContent = isDark ? "☀️" : "🌙";
+  themeLabel.textContent = isDark ? "Light" : "Dark";
+}
+
+const storedTheme = localStorage.getItem("theme");
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+applyTheme(storedTheme || (prefersDark ? "dark" : "light"));
+
+themeToggle.addEventListener("click", () => {
+  const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+  applyTheme(next);
+  localStorage.setItem("theme", next);
+});
+
 createControls();
 createSteelOptions();
 selectAll.addEventListener("click", () => {
