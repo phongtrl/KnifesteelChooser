@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Interactive Knife Steel Chooser</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app-shell">
+<section class="hero" aria-labelledby="page-title">
+<div>
+<p class="eyebrow">Knife steel chooser</p>
+<h1 id="page-title">Find your knife steel</h1>
+<p class="lede">Choose and compare the knife steels that match how you cook, sharpen, and care for your knife.</p>
+</div>
+<div class="hero-card" aria-live="polite">
+<span class="hero-label">Best fit right now</span>
+<strong id="topPick">Ginsan</strong>
+<p id="topReason">Balanced performance with easier maintenance.</p>
+</div>
+</section>
+
+<section class="decision-panel" aria-labelledby="priorities-title">
+<div class="panel-copy">
+<h2 id="priorities-title">Set your priorities</h2>
+<p>Move the sliders toward what matters most. The app weighs cutting feel, sharpening, edge life, and rust resistance.</p>
+</div>
+<div class="controls" id="controls"></div>
+</section>
+
+<section class="result-strip" aria-label="Steel recommendation scores">
+<div id="scoreCards" class="score-grid"></div>
+</section>
+
+<section class="steel-picker" aria-labelledby="picker-title">
+<div class="section-title compact">
+<div>
+<p class="eyebrow">Compare</p>
+<h2 id="picker-title">Select steels</h2>
+</div>
+<div class="selection-actions">
+<p id="selectionCount" class="selection-count">0 selected</p>
+<button id="selectAll" class="mini-button" type="button">Select all</button>
+<button id="clearSelection" class="mini-button" type="button">Clear</button>
+</div>
+</div>
+<div id="steelOptions" class="option-grid"></div>
+</section>
+
+<section class="comparison" aria-labelledby="compare-title">
+<div class="section-title">
+<p class="eyebrow">At a glance</p>
+<h2 id="compare-title">Same goal, different personality</h2>
+</div>
+<div id="comparisonRows" class="comparison-grid" aria-live="polite"></div>
+</section>
+
+<section class="details" aria-labelledby="details-title">
+<div class="section-title">
+<p class="eyebrow">Selected details</p>
+<h2 id="details-title">What each steel feels like</h2>
+</div>
+<div id="steelDetails" class="details-grid"></div>
+</section>
+
+<section class="choose" aria-labelledby="choose-title">
+<h2 id="choose-title">How to choose</h2>
+<div class="choose-grid">
+<article>
+<h3>Pick the highest fit score when...</h3>
+<p>Your sliders match how you really cook. A rust-resistance-heavy setup will favor stainless steels, while a sharpness-heavy setup will favor pure carbon steels.</p>
+</article>
+<article>
+<h3>Look past the score when...</h3>
+<p>You already know you enjoy a certain feel. Some cooks happily trade maintenance for carbon sharpness; others prefer stainless confidence every day.</p>
+</article>
+</div>
+<p class="source-note">@Knifesharpening aka NAIFU ナイフ's interactive knifesteel chooser</p>
+</section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
